@@ -19,3 +19,23 @@ cd PartDrawer
 git clone git@github.com:mapse/ParticleListDrawer .
 
 scram b
+
+## To run
+
+With the current configuration the config file is set to run the following fragments:
+
+J/psi + D0; J/psi + D*; J/psi + Ds+; J/psi + Lambdac+ as well as Psi(2S) + same open charms.
+
+In order to add more options go to test/Config.py and add another **elif** with the path of the files.
+
+**example:**
+
+```
+elif options.channel == 'my_new_channel':
+   path = 'my_new_channel/my_new_math.txt'
+   print '-------------- Particle List for channel fragment --------------'  
+```
+
+Finally run it:
+
+cmsRun test/Config.py channel=my_new_channel
